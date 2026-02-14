@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colors and Shapes</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid black;"></canvas>
+<br><br>
+
+<button onclick="clearCanvas()">Clear Canvas</button>
+
+<script>
+    // Part 2: Drawing Shapes when page loads
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // a. Blue Rectangle
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 150, 100);
+
+    // b. Red Circle
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(250, 70, 50, 0, Math.PI * 2);
+    ctx.fill();
+
+    // c. Green Triangle
+    ctx.fillStyle = "green";
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.lineTo(150, 200);
+    ctx.lineTo(100, 130);
+    ctx.closePath();
+    ctx.fill();
+
+    // d. Yellow Line (corner to corner)
+    ctx.strokeStyle = "yellow";
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.stroke();
+
+    // Part 3: Button Functionality
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+</script>
+
+</body>
+</html>
+
